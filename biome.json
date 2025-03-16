@@ -1,0 +1,14 @@
+{
+  "extends": ["@piondev/shared-configs/biome"],
+  "formatter": {
+    "ignore": ["package.json"]
+  },
+  "linter": {
+    "ignore": ["*.d.ts", "out/**", "temp/**"],
+    "rules": {
+      "complexity": {
+        "noBannedTypes": "off"
+      }
+    }
+  }
+}

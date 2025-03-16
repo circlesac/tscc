@@ -1,0 +1,37 @@
+{
+  "name": "@circlesac/tscc",
+  "version": "0.0.5",
+  "type": "module",
+  "bin": "bin/run",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "start": "rm -rf tmp && node --loader ts-node/esm src/cli.ts",
+    "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:biome",
+    "lint:eslint": "eslint . --fix",
+    "lint:prettier": "prettier '**/*.{ts,tsx,js,jsx,json,md,cjs,mjs,mts,yml,yaml}' --write",
+    "lint:biome": "biome check --write",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@babel/core": "^7.26.10",
+    "babel-plugin-add-import-extension": "^1.6.0",
+    "commander": "^13.1.0",
+    "glob": "^11.0.1",
+    "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "@piondev/shared-configs": "^1.0.35",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^22.13.10",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "packageManager": "yarn@1.22.19"
+}
