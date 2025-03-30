@@ -63,9 +63,7 @@ export class Command extends commander.Command {
 	async compile(override: Partial<CompilerOptions>) {
 		const options: CompilerOptions = {
 			...this.context.options,
-			...override,
-			declaration: true,
-			declarationMap: true
+			...override
 		}
 
 		// tsc
